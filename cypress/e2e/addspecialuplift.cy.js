@@ -1,0 +1,18 @@
+describe('test Adding Special Uplift', () => {
+  it('add special uplifts and see changes', () => {
+    cy.visit(' https://itxi-recruiter-extract.web.app/login')
+    cy.get('input[type="email"]').type("qaquiz@gmail.com")
+    cy.get('input[type="password"]').type("Test@123")
+    cy.contains('Login').click()
+    cy.wait(2000)
+    cy.contains("Awaiting Approvals").click()
+    cy.wait(5000)
+    cy.contains("2023-03-29").click()
+    cy.wait(5000)
+    cy.get('input[role="combobox"]').scrollIntoView()
+    cy.get('input[role="combobox"]').click()
+    cy.contains('Wedding Cake').click()
+    cy.contains("Save").click()
+    cy.contains("Flight Date")
+  })
+})
